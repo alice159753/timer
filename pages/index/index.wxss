@@ -1,0 +1,152 @@
+
+.box.data-v-57280228{
+      /* 最外层的盒子 */
+      width:160rpx;
+      height:160rpx;
+      margin: 0 auto;
+     position: relative;
+      overflow: hidden;
+      -webkit-border-radius: 50%;
+              border-radius: 50%;
+      background-color: #ffac44;
+}
+.left_box.data-v-57280228,.right_box.data-v-57280228{
+      /* 
+        左右两边用于 隐藏 旋转的div的盒子 
+        通过overflow来隐藏内部div旋转出去的部分
+      */
+      position: absolute;
+      top: 0;
+      width:81rpx; /* 不知道为什么不多一个像素会有空隙*/
+      height:160rpx;
+      overflow: hidden;
+      z-index: 1;
+}
+.left_box.data-v-57280228{
+      left: 0;
+}
+.right_box.data-v-57280228{
+      right: 0;
+}
+.left_item.data-v-57280228,.right_item.data-v-57280228{
+      width: 81rpx;
+      height: 160rpx;
+	  background-color: #ffd298;
+}
+.left_item.data-v-57280228{
+      /*
+       1.设置圆角，圆角大小为高度的一半
+       2.这只旋转的中心店，这是左边圆，中心点设置到右边中心点，右边圆则设置到左边中心点
+       */
+      -webkit-border-top-left-radius: 80rpx;
+              border-top-left-radius: 80rpx;
+      -webkit-border-bottom-left-radius: 80rpx;
+              border-bottom-left-radius: 80rpx;
+}
+.moving_left.data-v-57280228{
+		-webkit-transform-origin: right center;
+		        transform-origin: right center;
+		-webkit-transform: rotate(180deg);
+		        transform: rotate(180deg);
+		-webkit-animation: loading_left-data-v-57280228 1s linear infinite;
+		        animation: loading_left-data-v-57280228 1s linear infinite;
+		-webkit-animation-delay: 100ms;
+		        animation-delay: 100ms;
+}
+.right_item.data-v-57280228{
+      -webkit-border-top-right-radius: 80rpx;
+              border-top-right-radius: 80rpx;
+      -webkit-border-bottom-right-radius: 80rpx;
+              border-bottom-right-radius: 80rpx;
+}
+.moving_right.data-v-57280228{
+		-webkit-transform-origin: left center;
+		        transform-origin: left center;
+		-webkit-transform: rotate(180deg);
+		        transform: rotate(180deg);
+		-webkit-animation: loading_right-data-v-57280228 1s linear infinite;
+		        animation: loading_right-data-v-57280228 1s linear infinite;
+		-webkit-animation-delay: 100ms;
+		        animation-delay: 100ms;
+}
+.mask.data-v-57280228{
+      /* 遮住div多余的部分，呈现出线条的效果 */
+      position: absolute;
+      top: 25rpx;
+      left: 25rpx;
+      right: 25rpx;
+      bottom: 25rpx;
+      z-index: 2;
+      -webkit-border-radius: 50%;
+              border-radius: 50%;
+      background-color: #fff;
+	  color: red;
+	  display: -webkit-box;
+	  display: -webkit-flex;
+	  display: flex;
+	  -webkit-box-pack: center;
+	  -webkit-justify-content: center;
+	          justify-content: center;
+	  -webkit-box-align: center;
+	  -webkit-align-items: center;
+	          align-items: center;
+	  font-size: 40rpx;
+	  font-weight: bold;
+}
+@-webkit-keyframes loading_left-data-v-57280228{
+0%{
+            -webkit-transform: rotate(0deg);
+                    transform: rotate(0deg);
+}
+50%{
+            -webkit-transform: rotate(0deg);
+                    transform: rotate(0deg);
+}
+100%{
+            -webkit-transform: rotate(180deg);
+                    transform: rotate(180deg);
+}
+}
+@keyframes loading_left-data-v-57280228{
+0%{
+            -webkit-transform: rotate(0deg);
+                    transform: rotate(0deg);
+}
+50%{
+            -webkit-transform: rotate(0deg);
+                    transform: rotate(0deg);
+}
+100%{
+            -webkit-transform: rotate(180deg);
+                    transform: rotate(180deg);
+}
+}
+@-webkit-keyframes loading_right-data-v-57280228{
+0%{
+          -webkit-transform: rotate(0deg);
+                  transform: rotate(0deg);
+}
+50%{
+          -webkit-transform: rotate(180deg);
+                  transform: rotate(180deg);
+}
+100%{
+          -webkit-transform: rotate(180deg);
+                  transform: rotate(180deg);
+}
+}
+@keyframes loading_right-data-v-57280228{
+0%{
+          -webkit-transform: rotate(0deg);
+                  transform: rotate(0deg);
+}
+50%{
+          -webkit-transform: rotate(180deg);
+                  transform: rotate(180deg);
+}
+100%{
+          -webkit-transform: rotate(180deg);
+                  transform: rotate(180deg);
+}
+}
+
